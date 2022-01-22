@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/a6129e4bc3.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--My Stylesheet-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="css/favicon.ico" type="image/x-icon" />
+    <title>Take Notes</title>
+  </head>
+  <body>
+    <!--header started-->
+    <header>
+      <a href="#" id="home" onclick="showDefaultPage();">
+        <div class="logo">
+          <img src="css/favicon-32x32.png" alt="Tn" />
+          <div class="site-name">Take Notes</div>
+        </div>
+      </a>
+      <!--User is closed now-->
+      <div class="user close" onclick="showModalPage();">
+        <div class="user-name">@User</div>
+        <div class="profile-icon">
+          <img src="css/user24.png" alt="☺️P" />
+        </div>
+      </div>
+      <div id="login" onclick="showLoginPage();" class="">
+        login
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+      </div>
+    </header>
+    <!--header ended-->
+    <!--main section started-->
+    <div class="main">
+      <!--Login Page started-->
+      <div class="login-active close">
+        <div class="login-page">
+          <i onclick="loginClose();" class="fas fa-times-circle"></i>
+          <div class="login-dialog close">
+            <div class="login-header">Login</div>
+            <div class="login-content">
+              <form action="">
+                <input
+                  type="text"
+                  id="loginid"
+                  placeholder="E mail ID"
+                  required
+                />
+                <input
+                  type="password"
+                  id="loginpassword"
+                  placeholder="Password"
+                  required
+                />
+                <button class="logbtn" id="login-btn">Login</button>
+              </form>
+            </div>
+            <div>
+              Need an account?
+              <button
+                class="signbtn"
+                id="signup-btn"
+                onclick="showSignUpDialog();"
+              >
+                Sign up
+              </button>
+            </div>
+          </div>
+          <!--Sign up page-->
+          <div class="sign-up-dialog close">
+            <div class="login-header">Sign-up</div>
+            <div class="login-content sign-up-content">
+              <form action="">
+                <input
+                  type="text"
+                  id="first-name"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="last-name"
+                  placeholder="Last Name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="loginid-sign"
+                  placeholder="E mail ID"
+                  required
+                />
+                <input
+                  type="password"
+                  id="loginpassword-sign"
+                  placeholder="Password"
+                  required
+                />
+                <input
+                  type="password"
+                  id="loginpasswordcnf"
+                  placeholder="Confirm Password"
+                  required
+                />
+                <button class="logbtn" id="signup-btn">Sign-up</button>
+              </form>
+            </div>
+            <div>
+              Already have an account?
+              <button
+                class="signbtn"
+                id="login-btn"
+                onclick="showLoginDialog();"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+          <!--Sign up page ended-->
+        </div>
+      </div>
+      <!--Login Page ended-->
+      <!--Modal started-->
+      <div class="modal-active close">
+        <!--modal-active-->
+        <div class="modal">
+          <i class="fas fa-times-circle" onclick="closeModal();"></i>
+          <div class="modal-left">
+            <div class="modal-bar-icon">
+              <img src="css/favicon-32x32.png" alt="" />
+            </div>
+            <div class="modal-buttons" onclick="showProfileSection();">
+              <button id="profile-btn">
+                Profile
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="modal-buttons">
+              <button>
+                Sign-Out
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="modal-buttons" onclick="showAboutSection();">
+              <button id="about-btn">About ℹ️</button>
+            </div>
+          </div>
+          <div class="modal-right">
+            <div class="modal-sections profile-section close">
+              <div>
+                <div>
+                  <span><b>Name : </b></span>
+                  <span id="name">@User</span>
+                </div>
+                <div>
+                  <span><b>Email : </b> </span>
+                  <span id="mail">something@something.com</span>
+                </div>
+                <div>
+                  <span><b>Contact : </b></span>
+                  <span id="mobile">+__ __________</span>
+                </div>
+                <div>
+                  <span><b>Password : </b></span>
+                  <span id="password">88*****</span>
+                  <button>change password?</button>
+                </div>
+              </div>
+            </div>
+            <div class="modal-sections about-section close">
+              <div class="my-intro">
+                Hi, This Note taking web-page is developed by
+                <b>Akash Mittal</b>.<br />
+                Want to hire me for some work? <br />Contact me at :<br /><br />
+                <a
+                  href="https://www.linkedin.com/in/akash-mittal-7458541b8"
+                  target="blank"
+                >
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  Linkedin</a
+                >
+                <br />
+                <a href="https://github.com/AkashMittal-30" target="blank">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  Github
+                </a>
+                <br />
+                <a href="mailto: akash.mittal302001@gmail.com" target="blank">
+                  <i class="far fa-envelope" aria-hidden="true"></i>
+                  Email</a
+                >
+                <br />
+                <a
+                  href="https://akashmittal-30.github.io/AkashMittal/"
+                  target="blank"
+                >
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  Website</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal ended-->
+      <!--Help page started-->
+      <div class="help-active close">
+        <div class="help-page">
+          <i onclick="helpClose();" class="fas fa-times-circle"></i>
+          <div>Write your issue :</div>
+          <input type="text" placeholder="Issue Subject :" maxlength="80" />
+          <textarea placeholder="Type your issue...."></textarea>
+          <button>Send</button>
+        </div>
+      </div>
+      <!--Help page ended-->
+      <!--Left side started-->
+      <div class="left-side">
+        <div class="heading">
+          <input type="text" maxlength="80" placeholder="Heading..." />
+        </div>
+        <div class="content">
+          <textarea placeholder="Content here...."></textarea>
+        </div>
+        <div class="toolkit">
+          <!-- <div class="tools">
+            <img src="css/share.svg" alt="🔗" />
+            Share
+          </div> -->
+          <div class="tools">
+            <img src="css/save.svg" alt="💾" />
+            Save
+          </div>
+          <div class="tools" onclick="reload();">
+            <img
+              style="height: 20px; width: 20px"
+              src="css/reload.svg"
+              alt="🔃"
+            />
+            Reload
+          </div>
+        </div>
+      </div>
+      <!--Left side ended-->
+      <!--Right side started-->
+      <div class="right-side">
+        <div class="right-top">
+          Your Notes :
+          <div class="search-bar">
+            <img src="css/search.svg" alt="🔍" />
+            <input
+              id="input"
+              type="text"
+              placeholder="Search..."
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="slider">
+          <div class="slider-item">
+            <div class="slider-item-left">
+              <div class="slider-item-heading">Item Heading..</div>
+
+              <div class="slider-item-content">Item contents..</div>
+            </div>
+            <div class="slider-item-right">
+              <div class="edit-icon">
+                <img src="css/edit.svg" alt="✏️" />
+              </div>
+              <div class="delete-icon">
+                <img src="css/delete.svg" alt="⚱️" />
+              </div>
+              <div class="share-icon">
+                <img src="css/share.svg" alt="🔗" />
+              </div>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item-left">
+              <div class="slider-item-heading">Item Heading..</div>
+
+              <div class="slider-item-content">Item contents..</div>
+            </div>
+            <div class="slider-item-right">
+              <div class="edit-icon">
+                <img src="css/edit.svg" alt="✏️" />
+              </div>
+              <div class="delete-icon">
+                <img src="css/delete.svg" alt="⚱️" />
+              </div>
+              <div class="share-icon">
+                <img src="css/share.svg" alt="🔗" />
+              </div>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item-left">
+              <div class="slider-item-heading">Item Heading..</div>
+
+              <div class="slider-item-content">Item contents..</div>
+            </div>
+            <div class="slider-item-right">
+              <div class="edit-icon">
+                <img src="css/edit.svg" alt="✏️" />
+              </div>
+              <div class="delete-icon">
+                <img src="css/delete.svg" alt="⚱️" />
+              </div>
+              <div class="share-icon">
+                <img src="css/share.svg" alt="🔗" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Right side ended-->
+    </div>
+    <!--main section ended-->
+    <!--footer started-->
+    <div class="hrFoot"></div>
+    <footer>
+      © 2021 TakeNotes. All rights reserved.
+      <span class="help" onclick="showHelpPage();">Need help❔</span>
+    </footer>
+    <!--footer ended-->
+    <!--Scripts-->
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
